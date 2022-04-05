@@ -19,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 
 
 
@@ -27,32 +29,59 @@
 </head>
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand fw-bold fs-4" href="#">
-                <img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="" width="35" height="28" class="d-inline-block align-text-top "/>
-                To Do           
-            </a>
-            </div>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active fs-5" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5" href="#">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fs-5" href="#">About</a>
-              </li>
-            </ul>
-          </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="listDetail" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-dialog text-dark">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="ModalLabel">New Task</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </nav>
+        <div class="modal-body">
+            <div class="mb-3">
+              <label for="taskTitle" class="form-label">What is to be done?</label>
+              <input type="text" class="form-control" id="taskTitle" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+              <label for="dueDate" class="form-label">Due date</label>
+              <input type="date" class="form-control" id="dueDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="dueTime" class="form-label">Due time</label>
+              <input type="time" class="form-control" id="dueTime" required>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg bg-body rounded">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold fs-4 ms-4" href="#">
+        <img src="https://to-do-cdn.microsoft.com/static-assets/c87265a87f887380a04cf21925a56539b29364b51ae53e089c3ee2b2180148c6/icons/logo.png" alt="" width="35" height="28" class="d-inline-block align-text-top">
+        Tara To Do 
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-5" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+        </ul>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listDetail">
+          <i class="fa-solid fa-plus"></i> Add Task</button>
+      </div>
+    </div>
+  </nav>
 
 
 
